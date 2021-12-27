@@ -10,8 +10,6 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "data.csv",
-				"folderPath": "sink",
 				"container": "sink"
 			},
 			"columnDelimiter": ",",
