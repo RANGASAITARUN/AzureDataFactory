@@ -13,7 +13,12 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": [],
+				"userProperties": [
+					{
+						"name": "Delete",
+						"value": "deletes the files in blob storage"
+					}
+				],
 				"typeProperties": {
 					"dataset": {
 						"referenceName": "DelimitedText1",
