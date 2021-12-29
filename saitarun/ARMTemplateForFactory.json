@@ -48,7 +48,8 @@
 						},
 						"userProperties": [
 							{
-								"name": "dele"
+								"name": "Delete",
+								"value": "deletes the files in blob storage"
 							}
 						],
 						"typeProperties": {
