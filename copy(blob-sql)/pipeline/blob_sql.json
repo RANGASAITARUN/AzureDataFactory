@@ -37,16 +37,6 @@
 						"mappings": [
 							{
 								"source": {
-									"ordinal": 1
-								},
-								"sink": {
-									"name": "id",
-									"type": "Int32",
-									"physicalType": "int"
-								}
-							},
-							{
-								"source": {
 									"ordinal": 2
 								},
 								"sink": {
