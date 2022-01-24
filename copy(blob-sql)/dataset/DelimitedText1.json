@@ -13,7 +13,7 @@
 				"fileName": "sai.txt",
 				"container": "source"
 			},
-			"columnDelimiter": "|",
+			"columnDelimiter": ",",
 			"escapeChar": "\\",
 			"firstRowAsHeader": false,
 			"quoteChar": "\""
