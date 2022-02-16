@@ -1,0 +1,41 @@
+{
+	"name": "dataflow1",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "DelimitedText1",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "DelimitedText2",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
+			"transformations": [
+				{
+					"name": "Select1"
+				},
+				{
+					"name": "Filter1"
+				},
+				{
+					"name": "Window1"
+				},
+				{
+					"name": "Aggregate1"
+				}
+			],
+			"script": "source(output(\n\t\tFilm as string,\n\t\tGenre as string,\n\t\t{Lead Studio} as string,\n\t\t{Audience score %} as short,\n\t\tProfitability as double,\n\t\t{Rotten Tomatoes %} as short,\n\t\t{Worldwide Gross} as string,\n\t\tYear as short\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false) ~> source1\nsource1 select(mapColumn(\n\t\tFilm,\n\t\tGenre,\n\t\t{Lead Studio},\n\t\t{Audience score %},\n\t\tProfitability,\n\t\t{Rotten Tomatoes(in_percentages)} = {Rotten Tomatoes %},\n\t\t{Worldwide Gross},\n\t\tYear\n\t),\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> Select1\nSelect1 filter(toInteger(Year)>2009) ~> Filter1\nFilter1 window(over(Year,\n\t\tGenre),\n\tasc({Rotten Tomatoes(in_percentages)}, true),\n\tRank = rank()) ~> Window1\nWindow1 aggregate(groupBy(Year),\n\t{Audience score %} = count()) ~> Aggregate1\nAggregate1 sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> sink1"
+		}
+	}
+}
