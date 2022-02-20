@@ -1,5 +1,5 @@
 {
-	"name": "dataflow1",
+	"name": "cases_deaths_transo",
 	"properties": {
 		"type": "MappingDataFlow",
 		"typeProperties": {
