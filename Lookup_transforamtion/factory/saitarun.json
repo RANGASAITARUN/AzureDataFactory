@@ -1,0 +1,9 @@
+{
+	"name": "saitarun",
+	"location": "westus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "c0090587-a918-421a-b429-a38994c028fd",
+		"tenantId": "604c1504-c6a3-4080-81aa-b33091104187"
+	}
+}
