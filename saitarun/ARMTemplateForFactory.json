@@ -112,11 +112,11 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobStorageLocation",
-						"fileName": "blob.zip",
-						"container": "input"
+						"fileName": "abc2.txt",
+						"folderPath": "blob.zip/blob",
+						"container": "output"
 					},
 					"columnDelimiter": ",",
-					"compressionCodec": "ZipDeflate",
 					"escapeChar": "\\",
 					"quoteChar": "\""
 				},
@@ -144,9 +144,11 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobStorageLocation",
-						"container": "output"
+						"fileName": "zip",
+						"container": "input"
 					},
 					"columnDelimiter": ",",
+					"compressionCodec": "ZipDeflate",
 					"escapeChar": "\\",
 					"quoteChar": "\""
 				},
