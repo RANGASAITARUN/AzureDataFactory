@@ -1,0 +1,9 @@
+{
+	"name": "saitarun",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "1bee52ae-ced0-4dee-ad00-534ad43bdacd",
+		"tenantId": "dee11d44-1e8e-40de-85c9-af898a618304"
+	}
+}
