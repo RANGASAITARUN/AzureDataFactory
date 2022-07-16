@@ -5,8 +5,11 @@
 		"factoryName": {
 			"value": "saitarun"
 		},
-		"AzureBlobStorage1_connectionString": {
+		"AzureDataLakeStorage1_accountKey": {
 			"value": ""
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://saitarun.dfs.core.windows.net/"
 		}
 	}
 }
